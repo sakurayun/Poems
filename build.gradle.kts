@@ -70,7 +70,7 @@ tasks {
                     ?.let {
                         println("Coping ${it.name}")
                         it.inputStream()
-                            .transferTo(File("$testConsoleDir/plugins/${it.name}").apply { createNewFile() }
+                            .transferTo1(File("$testConsoleDir/plugins/${it.name}").apply { createNewFile() }
                                 .outputStream())
                         println("Copied ${it.name}")
                     }
