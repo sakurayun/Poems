@@ -1,0 +1,6 @@
+name: "GoodMorning"
+author: "ShrBox"
+version: "0.1.0"
+main: "shrbox.github.goodmorning.Main"
+info: ""
+depends: []
