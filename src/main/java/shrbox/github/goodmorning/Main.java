@@ -1,8 +1,12 @@
 package shrbox.github.goodmorning;
 
+import net.mamoe.mirai.console.command.BlockingCommand;
+import net.mamoe.mirai.console.command.CommandSender;
+import net.mamoe.mirai.console.command.JCommandManager;
 import net.mamoe.mirai.console.plugins.Config;
 import net.mamoe.mirai.console.plugins.PluginBase;
 import net.mamoe.mirai.message.GroupMessageEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +25,15 @@ class Main extends PluginBase {
 
     public void onEnable() {
         loadCfg();
+        JCommandManager.getInstance().register(this, new BlockingCommand("gmreload", new ArrayList<>(), "重载GoodMorning配置文件", "/gmreload") {
+            @Override
+            public boolean onCommandBlocking(@NotNull CommandSender commandSender, @NotNull List<String> list) {
+                loadCfg();
+                commandSender.sendMessageBlocking("重载成功");
+                return true;
+            }
+        });
+
         getEventListener().subscribeAlways(GroupMessageEvent.class, (GroupMessageEvent e) -> {
             if (e.getMessage().contentToString().equals("早")) {
                 if (!config.getLongList("enableGroups").contains(e.getGroup().getId())) return;
