@@ -27,5 +27,5 @@ jobs:
     - name: upload file
       uses: actions/upload-artifact@1.0.0
       with:
-        name: GoodMorning-autobuild.jar
-        path: build/libs/GoodMorning-0.1.0.jar
+        name: Poems-autobuild.jar
+        path: build/libs/Poems-0.1.0.jar

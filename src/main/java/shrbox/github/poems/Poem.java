@@ -1,4 +1,4 @@
-package shrbox.github.goodmorning;
+package shrbox.github.poems;
 
 public class Poem {
     int code;

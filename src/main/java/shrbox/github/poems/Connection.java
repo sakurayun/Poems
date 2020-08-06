@@ -1,4 +1,4 @@
-package shrbox.github.goodmorning;
+package shrbox.github.poems;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

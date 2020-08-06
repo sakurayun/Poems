@@ -1,4 +1,4 @@
-package shrbox.github.goodmorning;
+package shrbox.github.poems;
 
 import net.mamoe.mirai.console.command.BlockingCommand;
 import net.mamoe.mirai.console.command.CommandSender;
@@ -25,7 +25,7 @@ class Main extends PluginBase {
 
     public void onEnable() {
         loadCfg();
-        JCommandManager.getInstance().register(this, new BlockingCommand("gmreload", new ArrayList<>(), "重载GoodMorning配置文件", "/gmreload") {
+        JCommandManager.getInstance().register(this, new BlockingCommand("poreload", new ArrayList<>(), "重载Poems配置文件", "/poreload") {
             @Override
             public boolean onCommandBlocking(@NotNull CommandSender commandSender, @NotNull List<String> list) {
                 loadCfg();
@@ -35,7 +35,7 @@ class Main extends PluginBase {
         });
 
         getEventListener().subscribeAlways(GroupMessageEvent.class, (GroupMessageEvent e) -> {
-            if (e.getMessage().contentToString().equals("早")) {
+            if (e.getMessage().contentToString().equals("念诗")) {
                 if (!config.getLongList("enableGroups").contains(e.getGroup().getId())) return;
                 EventThread eventThread = new EventThread();
                 eventThread.startThread(e);

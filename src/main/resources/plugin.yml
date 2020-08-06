@@ -1,6 +1,6 @@
-name: "GoodMorning"
+name: "Poems"
 author: "ShrBox"
 version: "0.1.0"
-main: "shrbox.github.goodmorning.Main"
-info: ""
+main: "shrbox.github.poems.Main"
+info: "随机发送诗句"
 depends: []

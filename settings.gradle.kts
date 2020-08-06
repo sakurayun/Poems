@@ -16,5 +16,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "GoodMorning"
+rootProject.name = "Poems"
 
