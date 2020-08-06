@@ -6,3 +6,12 @@
 # Download
 
 [Github Actions](https://github.com/ShrBox/Poems/actions)
+
+# Configuration File
+
+- config.yml
+```
+enableGroups: //启用的QQ群
+   - 1145141919
+   - 1919810
+```
